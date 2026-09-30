@@ -29,7 +29,7 @@ section{padding:88px 0}
 header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-family:'Space Grotesk';font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:9px}
-.brandmark{width:64px;height:38px;flex:none;border-radius:8px;filter:drop-shadow(0 3px 5px rgba(17,29,48,.2))}
+.brandmark{width:64px;height:38px;flex:none}
 .icon-library{position:absolute;width:0;height:0;overflow:hidden}
 .icon{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
 .nav-links{display:flex;gap:30px;align-items:center;font-size:.92rem;font-weight:500}
