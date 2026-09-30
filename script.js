@@ -2,11 +2,17 @@
 const toggle=document.getElementById('themeToggle');
 const root=document.documentElement;
 const saved=localStorage.getItem('tb-theme');
-if(saved){root.setAttribute('data-theme',saved);toggle.textContent=saved==='dark'?'☀️':'🌙';}
+if(saved){root.setAttribute('data-theme',saved);}
+const updateThemeLabel=()=>{
+  const nextTheme=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  toggle.setAttribute('aria-label',`Ganti ke tema ${nextTheme==='dark'?'gelap':'terang'}`);
+  toggle.title=`Ganti ke tema ${nextTheme==='dark'?'gelap':'terang'}`;
+};
+updateThemeLabel();
 toggle.addEventListener('click',()=>{
   const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
   root.setAttribute('data-theme',next);localStorage.setItem('tb-theme',next);
-  toggle.textContent=next==='dark'?'☀️':'🌙';
+  updateThemeLabel();
 });
 
 // ===== MOBILE MENU =====

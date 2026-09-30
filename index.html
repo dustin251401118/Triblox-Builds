@@ -11,10 +11,27 @@
 </head>
 <body>
 
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="icon-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15m6-12v15"/><path d="M12 8.5a2 2 0 0 1 4 0c0 1.5-2 3.5-2 3.5s-2-2-2-3.5Z"/></symbol>
+  <symbol id="icon-design" viewBox="0 0 24 24"><path d="m14 5 5 5M4 20l4.5-1 10-10a2.12 2.12 0 0 0-3-3l-10 10z"/><path d="M4 4v5m-2.5-2.5h5M17 16v5m-2.5-2.5h5"/></symbol>
+  <symbol id="icon-collab" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="m10.5 8.6-4 6.8m7-6.8 4 6.8M8 18h8"/></symbol>
+  <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v16H6a3 3 0 0 1-3-3V6.5Z"/><path d="M3 8h17M15 13h5m-4 0h.01"/></symbol>
+  <symbol id="icon-bank" viewBox="0 0 24 24"><path d="m3 9 9-5 9 5v2H3zM5 11v8m5-8v8m4-8v8m5-8v8M3 21h18"/></symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18m0-18a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="icon-hammer" viewBox="0 0 24 24"><path d="m14 7 3-3 4 4-3 3M4 20l10-10m-4-7 3 3-4 4-3-3z"/><path d="m13 10 2 2"/></symbol>
+  <symbol id="icon-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></symbol>
+  <symbol id="icon-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4m-2-19a7 7 0 0 0-4 12.7c.6.4 1 1 1 1.8h6c0-.8.4-1.4 1-1.8A7 7 0 0 0 12 2Z"/><path d="M12 6v4m-2-2h4"/></symbol>
+  <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="m14 10 6-6m-3 0h3v3"/></symbol>
+  <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-4-.9L4 20l1.2-3.4A7.2 7.2 0 0 1 4 12c0-4.4 3.6-8 8-8s8 3.1 8 7.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/><path d="m16 4 .5 1.5L18 6l-1.5.5L16 8l-.5-1.5L14 6l1.5-.5Z"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
 <!-- ===== NAVBAR ===== -->
 <header>
   <div class="container nav">
-    <a href="#" class="logo"><span class="logo-cube">T</span>Triblox Builds</a>
+    <a href="#" class="logo"><svg class="brandmark" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="11" fill="#193d3d"/><path d="m20 7 9 5-9 5-9-5 9-5Z" fill="#9ce2bd"/><path d="M11 12v11l9 5V17l-9-5Z" fill="#f6f3e9"/><path d="m29 12-9 5v11l9-5V12Z" fill="#f58a6d"/><path d="m11 23 9 5 9-5" fill="none" stroke="#193d3d" stroke-width="1.5"/></svg>Triblox Builds</a>
     <nav class="nav-links" id="navLinks">
       <a href="#layanan">Layanan</a>
       <a href="#katalog">Katalog</a>
@@ -23,9 +40,9 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <button id="themeToggle" title="Ganti tema" aria-label="Ganti tema">🌙</button>
+      <button id="themeToggle" title="Ganti ke tema gelap" aria-label="Ganti ke tema gelap"><svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"/></svg><svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"/></svg></button>
       <a href="#order" class="btn btn-primary btn-sm" style="display:inline-flex">Pesan Sekarang</a>
-      <button id="hamburger" aria-label="Menu">☰</button>
+      <button id="hamburger" aria-label="Menu"><svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg></button>
     </div>
   </div>
 </header>
@@ -38,7 +55,7 @@
       <h1>Bangun Dunia <span>Roblox</span> Impianmu Bersama Kami</h1>
       <p>Triblox Builds membantu kamu membuat map Roblox berkualitas — dari obby, tycoon, simulator, hingga map custom sesuai request. Pesan langsung dari website, proses cepat, hasil memuaskan.</p>
       <div class="hero-cta">
-        <a href="#order" class="btn btn-primary">🛒 Order Sekarang</a>
+        <a href="#order" class="btn btn-primary"><svg class="icon" aria-hidden="true"><use href="#icon-cart"/></svg>Order Sekarang</a>
         <a href="#katalog" class="btn btn-ghost">Lihat Katalog</a>
       </div>
       <div class="hero-stats">
@@ -48,7 +65,7 @@
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-head"><b>🔨 Sedang Dibangun</b><span style="font-size:.82rem;color:var(--text-2)"><span class="dot"></span>Online</span></div>
+      <div class="hero-card-head"><b><svg class="icon" aria-hidden="true"><use href="#icon-hammer"/></svg>Sedang Dibangun</b><span style="font-size:.82rem;color:var(--text-2)"><span class="dot"></span>Online</span></div>
       <div class="hero-map">
         <div class="block b1"></div><div class="block b2"></div><div class="block b3"></div><div class="block b4"></div>
       </div>
@@ -65,7 +82,7 @@
     <p class="section-sub">Tiga layanan utama untuk kebutuhan map Roblox kamu — mau yang instan atau yang sepenuhnya custom.</p>
     <div class="cards-3">
       <div class="card">
-        <div class="card-icon">🗺️</div>
+        <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-map"/></svg></div>
         <h3>Map Ready Stock</h3>
         <p>Map yang sudah jadi dan siap pakai. Beli hari ini, langsung deploy besok.</p>
         <ul>
@@ -75,7 +92,7 @@
         </ul>
       </div>
       <div class="card">
-        <div class="card-icon">✏️</div>
+        <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-design"/></svg></div>
         <h3>Map Custom Request</h3>
         <p>Punya konsep sendiri? Ceritakan ide kamu, kami bangun dari nol sesuai request.</p>
         <ul>
@@ -85,7 +102,7 @@
         </ul>
       </div>
       <div class="card">
-        <div class="card-icon">🚀</div>
+        <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-collab"/></svg></div>
         <h3>Kolaborasi / Passive Income</h3>
         <p>Kami bangun map/game yang dimonetisasi — kamu bisa ikut andil sebagai partner.</p>
         <ul>
@@ -105,7 +122,7 @@
     <h2 class="section-title">Map Ready & Contoh Karya</h2>
     <p class="section-sub">Katalog map ready dan contoh karya akan ditampilkan di sini saat sudah tersedia.</p>
     <div class="catalog-empty" role="status">
-      <span class="catalog-empty-icon" aria-hidden="true">🗺️</span>
+      <span class="catalog-empty-icon"><svg class="icon" aria-hidden="true"><use href="#icon-map"/></svg></span>
       <h3>Belum ada map yang tersedia</h3>
       <p>Sedang disiapkan. Sementara itu, kamu bisa konsultasikan ide map custom bersama kami.</p>
       <a href="#order" class="btn btn-primary btn-sm">Konsultasi Map Custom</a>
@@ -135,19 +152,19 @@
     <p class="section-sub">Fleksibel untuk customer lokal maupun internasional. Detail nomor rekening/e-wallet dikirim setelah deal project.</p>
     <div class="pay-grid">
       <div class="pay-card">
-        <h3>📱 E-Wallet</h3>
+        <h3><svg class="icon" aria-hidden="true"><use href="#icon-wallet"/></svg>E-Wallet</h3>
         <div class="chips"><span class="chip">DANA</span><span class="chip">OVO</span><span class="chip">GoPay</span><span class="chip">ShopeePay</span><span class="chip">QRIS</span></div>
       </div>
       <div class="pay-card">
-        <h3>🏦 Transfer Bank</h3>
+        <h3><svg class="icon" aria-hidden="true"><use href="#icon-bank"/></svg>Transfer Bank</h3>
         <div class="chips"><span class="chip">BCA</span><span class="chip">BRI</span><span class="chip">Mandiri</span><span class="chip">BNI</span><span class="chip">SeaBank</span></div>
       </div>
       <div class="pay-card">
-        <h3>🌍 Internasional</h3>
+        <h3><svg class="icon" aria-hidden="true"><use href="#icon-globe"/></svg>Internasional</h3>
         <div class="chips"><span class="chip">PayPal</span><span class="chip">Wise</span><span class="chip">Crypto (USDT)</span></div>
       </div>
     </div>
-    <div class="pay-note">💡 <b>Catatan:</b> Pembayaran baru dilakukan <b>setelah</b> konsep & harga final disepakati via WhatsApp. Untuk project besar, tersedia sistem DP 50% + pelunasan saat serah terima. Sistem auto-checkout online menyusul setelah kami terintegrasi payment gateway resmi.</div>
+    <div class="pay-note"><svg class="icon" aria-hidden="true"><use href="#icon-bulb"/></svg><b>Catatan:</b> Pembayaran baru dilakukan <b>setelah</b> konsep & harga final disepakati via WhatsApp. Untuk project besar, tersedia sistem DP 50% + pelunasan saat serah terima. Sistem auto-checkout online menyusul setelah kami terintegrasi payment gateway resmi.</div>
   </div>
 </section>
 
@@ -179,12 +196,12 @@
             </select>
           </div>
           <div class="field"><label>Detail Request / Ide Map</label><textarea id="fDetail" placeholder="Ceritakan konsep map yang kamu inginkan: tema, fitur, referensi, deadline, dll." required></textarea></div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Kirim Order via WhatsApp 🚀</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Kirim Order via WhatsApp</button>
           <p class="form-note">Order akan terkirim ke WhatsApp Triblox Builds. Tim kami membalas maksimal 1×24 jam.</p>
         </form>
       </div>
       <div class="order-info">
-        <h3>Kenapa Order dari Sini? 🎯</h3>
+        <h3><svg class="icon" aria-hidden="true"><use href="#icon-target"/></svg>Kenapa Order dari Sini?</h3>
         <div class="check"><span>✓</span><span>Detail order tersusun rapi otomatis — tidak ada info yang terlewat.</span></div>
         <div class="check"><span>✓</span><span>Langsung terhubung ke WhatsApp admin, respon cepat.</span></div>
         <div class="check"><span>✓</span><span>Konsultasi konsep & penawaran harga <b>gratis</b>, tanpa komitmen.</span></div>
@@ -194,7 +211,7 @@
         <h3>Jam Operasional</h3>
         <p>Senin – Sabtu, 09.00 – 21.00 WIB. Order di luar jam operasional tetap diterima dan dibalas keesokan harinya.</p>
         <br>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-ghost">💬 Chat WhatsApp Langsung</a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-ghost"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg>Chat WhatsApp Langsung</a>
       </div>
     </div>
   </div>
@@ -228,7 +245,7 @@
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="container footer-grid">
-    <a href="#" class="logo"><span class="logo-cube">T</span>Triblox Builds</a>
+    <a href="#" class="logo"><svg class="brandmark" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="11" fill="#193d3d"/><path d="m20 7 9 5-9 5-9-5 9-5Z" fill="#9ce2bd"/><path d="M11 12v11l9 5V17l-9-5Z" fill="#f6f3e9"/><path d="m29 12-9 5v11l9-5V12Z" fill="#f58a6d"/><path d="m11 23 9 5 9-5" fill="none" stroke="#193d3d" stroke-width="1.5"/></svg>Triblox Builds</a>
     <div class="footer-links">
       <a href="#layanan">Layanan</a><a href="#katalog">Katalog</a><a href="#order">Order</a><a href="#faq">FAQ</a>
     </div>
