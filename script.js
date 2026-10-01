@@ -16,11 +16,15 @@ toggle.addEventListener('click',()=>{
 });
 
 // ===== MOBILE MENU =====
-document.getElementById('hamburger').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+hamburger.addEventListener('click',()=>{
+  const isOpen=navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded',String(isOpen));
 });
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.remove('open');
+  navLinks.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
 }));
 
 // ===== ORDER FORM -> WHATSAPP =====
