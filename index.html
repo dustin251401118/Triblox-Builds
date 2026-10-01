@@ -48,6 +48,15 @@
   <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
   <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/><path d="m16 4 .5 1.5L18 6l-1.5.5L16 8l-.5-1.5L14 6l1.5-.5Z"/></symbol>
   <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icon-flag" viewBox="0 0 24 24"><path d="M5 21V5m0 0c6-4 8 4 14 0v9c-6 4-8-4-14 0"/></symbol>
+  <symbol id="icon-house" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-6h-4v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="icon-gem" viewBox="0 0 24 24"><path d="m6 3-4 6 10 13L22 9l-4-6zM2 9h20M9 3l-2 6 5 13 5-13-2-6"/></symbol>
+  <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="5"/><path d="m11.5 11.5 9-9 2 2-3 3 2 2-3 3-2-2-3.5 3.5M8 15h.01"/></symbol>
+  <symbol id="icon-door" viewBox="0 0 24 24"><path d="M4 21h16M6 21V4l12-2v19M13 12h.01"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 21h8m-4-4v4M7 4h10v5a5 5 0 0 1-10 0V4Zm0 2H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4"/></symbol>
+  <symbol id="icon-car" viewBox="0 0 24 24"><path d="m5 11 2-5h10l2 5m-16 0h18v7H3zM5 18v2m14-2v2M7 14h.01M17 14h.01"/><path d="M6 11h12"/></symbol>
 </svg>
 
 <!-- ===== NAVBAR ===== -->
@@ -87,14 +96,123 @@
         <div class="stat"><b>Fast</b><span>Respon & Pengerjaan</span></div>
       </div>
     </div>
-      <div class="hero-card">
-      <div class="hero-card-head"><b><svg class="icon" aria-hidden="true"><use href="#icon-hammer"/></svg>Preview Build</b><span class="preview-label">Simulasi interaktif</span></div>
-      <div class="hero-map">
-        <div class="block b1"></div><div class="block b2"></div><div class="block b3"></div><div class="block b4"></div>
-      </div>
-      <div class="hero-card-row"><span>Lingkungan: <b id="buildStage">Neon Obby</b></span><span><b id="buildPercent">68%</b></span></div>
-      <div class="build-track" role="progressbar" aria-label="Progress simulasi build" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span id="buildProgress"></span></div>
-      <p class="build-caption" aria-live="polite">Blok dan jalur sedang dirakit</p>
+      <div class="concept-panel" data-concept="obby">
+        <div class="concept-panel-head"><b><svg class="icon" aria-hidden="true"><use href="#icon-bulb"/></svg>Mulai dari Ide</b><span class="concept-label">Pilih genre</span></div>
+        <p class="concept-intro">Belum punya brief? Pilih jenis map untuk mendapat titik awal diskusi.</p>
+        <div class="concept-options" role="group" aria-label="Pilih genre map">
+          <button class="concept-option" type="button" data-concept="obby" aria-pressed="true">Obby</button>
+          <button class="concept-option" type="button" data-concept="tycoon" aria-pressed="false">Tycoon</button>
+          <button class="concept-option" type="button" data-concept="simulator" aria-pressed="false">Simulator</button>
+          <button class="concept-option" type="button" data-concept="horror" aria-pressed="false">Horror</button>
+          <button class="concept-option" type="button" data-concept="roleplay" aria-pressed="false">Roleplay</button>
+          <button class="concept-option" type="button" data-concept="adventure" aria-pressed="false">Adventure</button>
+          <button class="concept-option" type="button" data-concept="racing" aria-pressed="false">Racing</button>
+          <button class="concept-option" type="button" data-concept="battle" aria-pressed="false">Battle</button>
+        </div>
+        <div class="concept-visual" id="conceptVisual" data-concept="obby" role="img" aria-label="Alur konsep Obby: Spawn, Rintangan, Checkpoint, Finish">
+          <div class="concept-visual-head"><span id="conceptVisualGenre">OBBY</span><span>ALUR GAMEPLAY</span></div>
+          <svg class="concept-art" id="conceptArt" data-concept="obby" viewBox="0 0 640 240" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="artSkyObby" x2="0" y2="1"><stop stop-color="#a6e8ed"/><stop offset="1" stop-color="#e9f8d8"/></linearGradient>
+              <linearGradient id="artSkyTycoon" x2="0" y2="1"><stop stop-color="#9ce1ce"/><stop offset="1" stop-color="#f4edc4"/></linearGradient>
+              <linearGradient id="artSkySimulator" x2="0" y2="1"><stop stop-color="#88d8f2"/><stop offset="1" stop-color="#d4f6e8"/></linearGradient>
+              <linearGradient id="artSkyHorror" x2="0" y2="1"><stop stop-color="#182442"/><stop offset="1" stop-color="#55415e"/></linearGradient>
+              <linearGradient id="artSkyRoleplay" x2="0" y2="1"><stop stop-color="#ffd092"/><stop offset="1" stop-color="#f48b83"/></linearGradient>
+              <linearGradient id="artSkyAdventure" x2="0" y2="1"><stop stop-color="#91d9ed"/><stop offset="1" stop-color="#f3e3b7"/></linearGradient>
+              <linearGradient id="artSkyRacing" x2="0" y2="1"><stop stop-color="#b6d6ee"/><stop offset="1" stop-color="#f4d8ad"/></linearGradient>
+              <linearGradient id="artSkyBattle" x2="0" y2="1"><stop stop-color="#20264e"/><stop offset="1" stop-color="#755178"/></linearGradient>
+            </defs>
+            <g class="art-scene art-scene-obby">
+              <rect width="640" height="240" fill="url(#artSkyObby)"/><circle cx="520" cy="54" r="25" fill="#fff1a9"/>
+              <path d="M0 168 95 108l76 53 92-81 110 91 91-61 176 82v48H0Z" fill="#9bd1b1"/><path d="M0 198 130 150l112 39 107-59 135 71 81-34 75 30v43H0Z" fill="#67b792"/>
+              <path d="M32 190h106v20H32zm127-37h92v20h-92zm112-44h90v20h-90zm112 43h92v20h-92zm111 38h112v20H494z" fill="#f9fcff"/><path d="M32 210h106v11H32zm127-37h92v11h-92zm112-44h90v11h-90zm112 43h92v11h-92zm111 39h112v11H494z" fill="#648ec0"/>
+              <g class="scene-float"><rect x="91" y="151" width="19" height="25" rx="5" fill="#ff8a65"/><circle cx="101" cy="145" r="10" fill="#ffd2ad"/><path d="m277 96 11-17 11 17z" fill="#f45b69"/><path d="M285 96v16" stroke="#fff" stroke-width="3"/></g>
+              <path d="M0 230h640" stroke="#477d68" stroke-width="20"/>
+            </g>
+            <g class="art-scene art-scene-tycoon">
+              <rect width="640" height="240" fill="url(#artSkyTycoon)"/><circle cx="532" cy="47" r="25" fill="#ffe17d"/>
+              <path d="M0 160q120-76 240 0t240 0 160 4v76H0Z" fill="#82c7a2"/><path d="M0 187q135-60 270 0t250-2 120 8v47H0Z" fill="#4f9b76"/>
+              <path d="M64 188h480v22H64z" fill="#435967"/><path d="M82 198h435" stroke="#f7d77c" stroke-width="4" stroke-dasharray="20 15"/>
+              <path d="M135 112h105v76H135z" fill="#e8f4ed"/><path d="M153 88h68v24h-68z" fill="#517d91"/><path d="M163 68h16v20h-16zm40-19h14v39h-14z" fill="#54758a"/><path d="M157 134h24v27h-24zm38 0h24v27h-24z" fill="#73b6a0"/>
+              <path d="M330 126h115v62H330z" fill="#e2ede8"/><path d="m315 127 72-48 73 48z" fill="#e39c5e"/><path d="M355 148h27v40h-27zm43 0h28v22h-28z" fill="#6a8ea0"/>
+              <g class="scene-float"><circle cx="497" cy="115" r="23" fill="#ffcf5c"/><path d="M487 115h20m-10-10v20" stroke="#815f26" stroke-width="4"/><rect x="264" y="164" width="22" height="22" rx="3" fill="#e8a84e"/><rect x="288" y="154" width="26" height="32" rx="3" fill="#d37e52"/></g>
+            </g>
+            <g class="art-scene art-scene-simulator">
+              <rect width="640" height="240" fill="url(#artSkySimulator)"/><circle cx="93" cy="53" r="25" fill="#fff0a2"/>
+              <path d="M0 163q93-76 188 0t192-2 260 4v75H0Z" fill="#76c8a8"/><path d="M0 190q114-58 226 0t203 0 211-8v66H0Z" fill="#3a997e"/>
+              <path d="m339 63 49 16 19 51-36 43-57-13-21-47z" fill="#56c3e0" stroke="#e4fcff" stroke-width="5"/><path d="m350 79 16 48-43-14z" fill="#b3f2ed"/><path d="m366 127 32 3-27 31-48-13z" fill="#278ab2"/>
+              <g class="scene-float"><circle cx="235" cy="86" r="17" fill="#f8cd58"/><circle cx="235" cy="86" r="9" fill="none" stroke="#fff4c1" stroke-width="3"/><circle cx="460" cy="75" r="12" fill="#f8cd58"/><circle cx="460" cy="75" r="6" fill="none" stroke="#fff4c1" stroke-width="2"/><path d="M151 113q21-31 42 0" fill="#8e7de1"/><circle cx="172" cy="104" r="18" fill="#bbaaf6"/><circle cx="166" cy="101" r="2" fill="#453d73"/><circle cx="178" cy="101" r="2" fill="#453d73"/></g>
+              <path d="M0 224q90-35 180 0t180 0 280-2" fill="none" stroke="#b5ecd3" stroke-width="7"/>
+            </g>
+            <g class="art-scene art-scene-horror">
+              <rect width="640" height="240" fill="url(#artSkyHorror)"/><circle cx="519" cy="49" r="24" fill="#f1dbbb"/><circle cx="530" cy="42" r="22" fill="#26304b"/>
+              <g fill="#e9e1cd"><circle cx="84" cy="52" r="2"/><circle cx="153" cy="84" r="2"/><circle cx="394" cy="42" r="2"/><circle cx="575" cy="110" r="2"/></g>
+              <path d="M0 169q110-48 220 0t210 0 210 0v71H0Z" fill="#34394d"/><path d="M0 195q130-28 250 0t220 0 170 0v45H0Z" fill="#252d40"/>
+              <path d="M270 178h100l88 62H182z" fill="#77788a" opacity=".48"/><path d="M302 178h36l34 62h-104z" fill="#b9a9a0" opacity=".28"/>
+              <g fill="#171d30"><path d="M91 192v-62h9v62zm-15-49 20-32 20 32z"/><path d="M529 192v-66h9v66zm-17-52 21-35 21 35z"/></g>
+              <path d="M210 181v-67l48-37 48 37v67z" fill="#454258"/><path d="m198 116 60-49 60 49z" fill="#777087"/><path d="M250 82V55h17v27" fill="#555064"/>
+              <path d="M300 181v-92l42-40 42 40v92z" fill="#34364b"/><path d="m288 93 54-52 54 52z" fill="#847887"/><path d="M328 61V31h28v36" fill="#4b465b"/><path d="m321 33 21-23 21 23z" fill="#aa8b89"/>
+              <path d="M378 181v-67l48-37 48 37v67z" fill="#454258"/><path d="m366 116 60-49 60 49z" fill="#777087"/>
+              <g fill="#f5ca83"><path d="M224 127h15v23h-15zm33 0h15v23h-15zm-33 35h15v19h-15zm33 0h15v19h-15z"/><path d="M316 101h15v24h-15zm36 0h15v24h-15zm-36 37h15v24h-15zm36 0h15v24h-15z"/><path d="M392 127h15v23h-15zm33 0h15v23h-15zm-33 35h15v19h-15zm33 0h15v19h-15z"/></g>
+              <path d="M329 144h26v37h-26z" fill="#171d30"/><circle cx="349" cy="164" r="2" fill="#edbd74"/>
+              <g class="scene-float" fill="#c9d5dd" opacity=".35"><path d="M0 183q74-13 148 0v17H0zm492 0q74-13 148 0v17H492z"/></g>
+            </g>
+            <g class="art-scene art-scene-roleplay">
+              <rect width="640" height="240" fill="url(#artSkyRoleplay)"/><circle cx="525" cy="61" r="30" fill="#ffe8a3"/>
+              <path d="M0 174q100-48 200 0t210 0 230 0v66H0Z" fill="#84b989"/><path d="M0 202h640v38H0Z" fill="#667e82"/><path d="M0 218h640" stroke="#e9d8a9" stroke-width="3" stroke-dasharray="18 14"/>
+              <path d="M70 137h115v67H70z" fill="#f8e3bf"/><path d="m59 139 68-51 68 51z" fill="#db7567"/><path d="M88 157h24v26H88zm52 0h24v26h-24z" fill="#73a7a4"/>
+              <path d="M245 119h133v85H245z" fill="#f3d5a8"/><path d="m232 121 79-57 80 57z" fill="#6f8f88"/><path d="M271 151h80v53h-80z" fill="#9b594e"/><path d="M287 163h24v24h-24zm38 0h24v24h-24z" fill="#ffd886"/>
+              <g class="scene-float"><path d="M453 169V103" stroke="#6f523d" stroke-width="10"/><circle cx="453" cy="91" r="30" fill="#4d9c70"/><circle cx="431" cy="106" r="19" fill="#61ad76"/><circle cx="474" cy="107" r="20" fill="#36845e"/><path d="M541 176v-34" stroke="#75573d" stroke-width="8"/><circle cx="541" cy="132" r="21" fill="#548c60"/><rect x="393" y="164" width="36" height="38" rx="5" fill="#e2ad59"/><path d="M401 164v-9a10 10 0 0 1 20 0v9" fill="none" stroke="#e2ad59" stroke-width="5"/></g>
+            </g>
+            <g class="art-scene art-scene-adventure">
+              <rect width="640" height="240" fill="url(#artSkyAdventure)"/><circle cx="93" cy="55" r="24" fill="#fff0ae"/>
+              <path d="m0 189 125-125 96 91 116-119 119 121 74-71 110 103v51H0Z" fill="#789b90"/><path d="m56 134 69-70 50 48-25-4-24 25-20-18zM282 108l55-72 62 63-27-10-18 17-26-13-19 19z" fill="#e8eee0"/>
+              <path d="M0 191q135-42 260 0t206-3 174 0v52H0Z" fill="#6d9869"/><path d="M332 112q-70 34-17 61t-43 67" fill="none" stroke="#e5c080" stroke-width="15"/><path d="M332 112q-70 34-17 61t-43 67" fill="none" stroke="#f6dfae" stroke-width="3" stroke-dasharray="7 10"/>
+              <g class="scene-float"><path d="M485 171v-58" stroke="#554a3a" stroke-width="5"/><path d="M490 115h52l-25 19h-27z" fill="#ef725c"/><rect x="251" y="181" width="34" height="25" rx="4" fill="#b56c3e"/><path d="M247 184q21-25 42 0" fill="none" stroke="#e2b765" stroke-width="6"/><circle cx="447" cy="107" r="12" fill="#e8c653"/></g>
+            </g>
+            <g class="art-scene art-scene-racing">
+              <rect width="640" height="240" fill="#86a96f"/>
+              <path d="M0 32h640M0 208h640" stroke="#a5bf84" stroke-width="24" opacity=".34"/>
+              <path d="M26 24v192m588-192v192" stroke="#73975f" stroke-width="2" stroke-dasharray="3 12" opacity=".32"/>
+              <ellipse cx="320" cy="120" rx="174" ry="77" fill="#39434b" stroke="#f5f1df" stroke-width="4"/>
+              <ellipse cx="320" cy="120" rx="106" ry="34" fill="#74a875" stroke="#f5f1df" stroke-width="4"/>
+              <ellipse cx="320" cy="120" rx="140" ry="55" fill="none" stroke="#f5d982" stroke-width="3" stroke-dasharray="12 10"/>
+              <rect x="307" y="44" width="26" height="42" fill="#f5f1df"/>
+              <path d="M307 44h13v10h-13zm13 10h13v11h-13zm-13 11h13v10h-13zm13 10h13v11h-13z" fill="#39434b"/>
+              <g transform="translate(461 120) rotate(180)">
+                <path d="M-11 20v-28q0-9 5-15v-8h12v8q5 6 5 15v28z" fill="#e4544d" stroke="#f9f0d9" stroke-width="2"/>
+                <path d="M-5-12h10l4 11H-9z" fill="#b9dfe4"/><path d="M-5 5h10v8H-5z" fill="#a6cbd2"/>
+                <path d="M-16-12h5v12h-5zm27 0h5V0h-5zM-16 9h5v12h-5zm27 0h5v12h-5z" fill="#26323b"/>
+                <path d="M-3-27h6" stroke="#fff2bd" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </g>
+            <g class="art-scene art-scene-battle">
+              <rect width="640" height="240" fill="url(#artSkyBattle)"/><path d="M0 171h640v69H0z" fill="#323553"/><path d="M0 199h640M160 171v69m160-69v69m160-69v69" stroke="#62658a" stroke-width="2" opacity=".7"/>
+              <path d="M61 170V91h48v79zM78 91V66h14v25M531 170V76h48v94zM548 76V48h14v28" fill="#424667" stroke="#8c88bb" stroke-width="3"/><path d="M48 171h74m396 0h74" stroke="#e87974" stroke-width="6"/>
+              <path d="m296 144 24-48 24 48-24 29z" fill="#73e7df" stroke="#d6ffef" stroke-width="3"/><path d="m320 96 1 77" stroke="#fff" stroke-width="3" opacity=".8"/><path d="M127 179h63v-19h40v39h-52v18h-51zM513 179h-63v-19h-40v39h52v18h51z" fill="#626887"/>
+              <g class="scene-float"><circle cx="197" cy="78" r="8" fill="#f08b76"/><circle cx="429" cy="66" r="8" fill="#72ded0"/><path d="m197 86-7 31h14zM429 74l-7 31h14z" fill="#f08b76"/><path d="M0 134h154m332-36h154" stroke="#f08b76" stroke-width="2" stroke-dasharray="6 8" opacity=".8"/></g>
+            </g>
+          </svg>
+          <div class="concept-route" aria-hidden="true">
+            <span class="concept-node"><span class="concept-node-icon"><svg class="icon"><use href="#icon-target"/></svg></span><b id="conceptStep1">Spawn</b></span>
+            <span class="concept-node"><span class="concept-node-icon"><svg class="icon"><use href="#icon-hammer"/></svg></span><b id="conceptStep2">Rintangan</b></span>
+            <span class="concept-node"><span class="concept-node-icon"><svg class="icon"><use href="#icon-map"/></svg></span><b id="conceptStep3">Checkpoint</b></span>
+            <span class="concept-node"><span class="concept-node-icon"><svg class="icon"><use href="#icon-trophy"/></svg></span><b id="conceptStep4">Finish</b></span>
+          </div>
+          <p class="concept-visual-note">Contoh alur konsep, bukan map yang sudah selesai.</p>
+        </div>
+        <div class="concept-brief" aria-live="polite">
+          <span class="concept-kicker" id="conceptKicker">OBBY</span>
+          <h3 id="conceptTitle">Obby penuh tantangan</h3>
+          <p id="conceptDescription">Susun lintasan dengan tempo, tantangan, dan tujuan yang jelas.</p>
+          <ul class="concept-features" id="conceptFeatures">
+            <li>Checkpoint dan level bertahap</li>
+            <li>Rintangan sesuai tingkat kesulitan</li>
+            <li>Area finish dan reward</li>
+          </ul>
+        </div>
+        <a href="#order" class="btn btn-primary concept-cta" id="useConcept">Gunakan Konsep Ini <span aria-hidden="true">→</span></a>
+        <p class="concept-note">Konsep awal ini bisa disesuaikan saat konsultasi.</p>
     </div>
   </div>
 </section>
