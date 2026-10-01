@@ -87,12 +87,14 @@
         <div class="stat"><b>Fast</b><span>Respon & Pengerjaan</span></div>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="hero-card-head"><b><svg class="icon" aria-hidden="true"><use href="#icon-hammer"/></svg>Sedang Dibangun</b><span style="font-size:.82rem;color:var(--text-2)"><span class="dot"></span>Online</span></div>
+      <div class="hero-card">
+      <div class="hero-card-head"><b><svg class="icon" aria-hidden="true"><use href="#icon-hammer"/></svg>Preview Build</b><span class="preview-label">Simulasi interaktif</span></div>
       <div class="hero-map">
         <div class="block b1"></div><div class="block b2"></div><div class="block b3"></div><div class="block b4"></div>
       </div>
-      <div class="hero-card-row"><span>Project: <b>-</b></span><span>Progress: <b>-%</b></span></div>
+      <div class="hero-card-row"><span>Lingkungan: <b id="buildStage">Neon Obby</b></span><span><b id="buildPercent">68%</b></span></div>
+      <div class="build-track" role="progressbar" aria-label="Progress simulasi build" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68"><span id="buildProgress"></span></div>
+      <p class="build-caption" aria-live="polite">Blok dan jalur sedang dirakit</p>
     </div>
   </div>
 </section>
@@ -181,10 +183,6 @@
       <div class="pay-card">
         <h3><svg class="icon" aria-hidden="true"><use href="#icon-bank"/></svg>Transfer Bank</h3>
         <div class="chips"><span class="chip">BCA</span><span class="chip">BRI</span><span class="chip">Mandiri</span><span class="chip">BNI</span><span class="chip">SeaBank</span></div>
-      </div>
-      <div class="pay-card">
-        <h3><svg class="icon" aria-hidden="true"><use href="#icon-globe"/></svg>Internasional</h3>
-        <div class="chips"><span class="chip">PayPal</span><span class="chip">Wise</span><span class="chip">Crypto (USDT)</span></div>
       </div>
     </div>
     <div class="pay-note"><svg class="icon" aria-hidden="true"><use href="#icon-bulb"/></svg><b>Catatan:</b> Pembayaran baru dilakukan setelah konsep & harga final disepakati via WhatsApp. Untuk project besar, tersedia sistem DP 50% + pelunasan saat serah terima. Sistem auto-checkout online menyusul setelah kami terintegrasi payment gateway resmi.</div>

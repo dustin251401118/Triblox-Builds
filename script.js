@@ -27,8 +27,75 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
   hamburger.setAttribute('aria-expanded','false');
 }));
 
+// ===== INTERACTIVE BUILD PREVIEW =====
+const buildProgress=document.getElementById('buildProgress');
+const buildPercent=document.getElementById('buildPercent');
+const buildStage=document.getElementById('buildStage');
+const buildTrack=document.querySelector('.build-track');
+const buildCaption=document.querySelector('.build-caption');
+const buildStages=[
+  {name:'Neon Obby',progress:68,caption:'Blok dan jalur sedang dirakit'},
+  {name:'Sky Islands',progress:82,caption:'Pulau melayang mulai terbentuk'},
+  {name:'Crystal Cave',progress:56,caption:'Pencahayaan kristal sedang diatur'}
+];
+let currentBuild=0;
+const updateBuildPreview=()=>{
+  const stage=buildStages[currentBuild];
+  buildProgress.style.width=`${stage.progress}%`;
+  buildPercent.textContent=`${stage.progress}%`;
+  buildStage.textContent=stage.name;
+  buildCaption.textContent=stage.caption;
+  buildTrack.setAttribute('aria-valuenow',String(stage.progress));
+  currentBuild=(currentBuild+1)%buildStages.length;
+};
+if(buildProgress&&buildPercent&&buildStage&&buildTrack&&buildCaption){
+  updateBuildPreview();
+  window.setInterval(updateBuildPreview,4200);
+}
+
+// ===== SCROLL INTERACTIONS =====
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('js-motion');
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  }),{threshold:.12});
+  document.querySelectorAll('section .container > *, .cards-3 > *, .steps > *, .pay-grid > *, .faq-list details').forEach((element,index)=>{
+    element.classList.add('reveal');
+    element.style.transitionDelay=`${Math.min(index%4,3)*70}ms`;
+    revealObserver.observe(element);
+  });
+
+  const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      document.querySelectorAll('.nav-links a').forEach(link=>{
+        link.classList.toggle('is-active',link.getAttribute('href')===`#${entry.target.id}`);
+      });
+    }
+  }),{rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('main section[id], body > section[id]').forEach(section=>sectionObserver.observe(section));
+}
+
+const heroMap=document.querySelector('.hero-map');
+if(heroMap&&!prefersReducedMotion&&window.matchMedia('(pointer: fine)').matches){
+  heroMap.addEventListener('pointermove',event=>{
+    const bounds=heroMap.getBoundingClientRect();
+    const x=(event.clientX-bounds.left)/bounds.width-.5;
+    const y=(event.clientY-bounds.top)/bounds.height-.5;
+    heroMap.querySelectorAll('.block').forEach((block,index)=>{
+      const depth=(index+1)*5;
+      block.style.transform=`translate(${x*depth}px,${y*depth}px)`;
+    });
+  });
+  heroMap.addEventListener('pointerleave',()=>{
+    heroMap.querySelectorAll('.block').forEach(block=>block.style.transform='');
+  });
+}
+
 // ===== ORDER FORM -> WHATSAPP =====
-// ⚠️ GANTI nomor di bawah dengan nomor WhatsApp bisnis kalian (format: 628xxxxxxxxxx)
 const WA_NUMBER='6281234567890';
 document.getElementById('orderForm').addEventListener('submit',function(e){
   e.preventDefault();
