@@ -110,7 +110,7 @@ if(!prefersReducedMotion&&'IntersectionObserver' in window){
 }
 
 // ===== ORDER FORM -> WHATSAPP =====
-const WA_ORDER_LINK='https://wa.me/message/CGPS3H5U5TVLD1';
+const WA_ORDER_LINK='https://wa.me/6283186705205';
 document.getElementById('orderForm').addEventListener('submit',function(e){
   e.preventDefault();
   const name=document.getElementById('fName').value.trim();
