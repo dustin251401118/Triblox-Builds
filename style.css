@@ -177,6 +177,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in s
 .map-body p{color:var(--text-2);font-size:.86rem;margin-bottom:14px}
 .map-body .game-features{margin:0;padding-left:18px;color:var(--text-2);font-size:.84rem}
 .map-body .game-features li+li{margin-top:6px}
+.game-launch{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:2px;padding:9px 14px;border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-size:.86rem;font-weight:700;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+.game-launch .icon{width:16px;height:16px;transition:transform .2s}
+.game-launch:hover{transform:translateY(-2px);background:var(--accent-soft)}
+.game-launch:hover .icon{transform:translate(2px,-2px)}
+.game-launch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .map-foot{display:flex;justify-content:space-between;align-items:center}
 .price{font-family:'Space Grotesk';font-weight:700}
 .price small{color:var(--text-2);font-weight:400;font-family:'Inter';font-size:.75rem}
