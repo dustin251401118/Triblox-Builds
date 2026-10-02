@@ -139,6 +139,10 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in s
 .catalog-cta p{color:var(--text-2);font-size:.92rem}
 .map-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;background:var(--border);overflow:hidden}
 .map-gallery-single{grid-template-columns:1fr}
+.map-image-trigger{display:block;min-width:0;padding:0;border:0;background:transparent;cursor:zoom-in;overflow:hidden}
+.map-image-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.map-image-trigger img{transition:transform .25s ease}
+.map-image-trigger:hover img{transform:scale(1.035)}
 .map-gallery img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
 .map-carousel-controls{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:4px 12px;background:var(--surface)}
 .map-carousel-arrow{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);cursor:pointer}
@@ -147,6 +151,16 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in s
 .map-carousel-indicators{display:flex;align-items:center;gap:8px}
 .map-carousel-indicators button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:var(--border);cursor:pointer}
 .map-carousel-indicators button[aria-current="true"]{width:20px;border-radius:4px;background:var(--accent)}
+.work-lightbox{width:min(96vw,1600px);max-width:none;max-height:96dvh;margin:auto;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:#10131c;color:#fff;box-shadow:0 24px 80px rgba(0,0,0,.55)}
+.work-lightbox[open]{display:grid;gap:10px}
+.work-lightbox::backdrop{background:rgba(5,8,15,.88);backdrop-filter:blur(5px)}
+.lightbox-toolbar{display:flex;align-items:center;justify-content:space-between;color:#dbe3ef;font-size:.82rem;font-weight:600}
+.lightbox-close,.lightbox-nav{display:grid;place-items:center;width:40px;height:40px;border:1px solid rgba(255,255,255,.2);border-radius:6px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.18)}
+.lightbox-stage{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;gap:12px;align-items:center;min-height:0}
+.lightbox-stage img{display:block;width:100%;max-height:82dvh;object-fit:contain}
+.lightbox-caption{min-height:1.4em;color:#dbe3ef;font-size:.82rem;text-align:center}
+.lightbox-close:focus-visible,.lightbox-nav:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
 .catalog-empty{margin-top:40px;padding:48px 24px;text-align:center;background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius)}
 .catalog-empty-icon{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 14px;border-radius:16px;background:var(--accent-soft);color:var(--accent)}
 .catalog-empty-icon .icon{width:28px;height:28px}
@@ -237,6 +251,9 @@ footer{border-top:1px solid var(--border);padding:44px 0;margin-top:88px}
   .cards-3,.pay-grid,.steps{grid-template-columns:1fr}
   .catalog-cta{align-items:flex-start;flex-direction:column}
   .catalog-slide{flex-basis:88%}
+  .work-lightbox{width:100vw;max-height:100dvh;padding:10px;border:0;border-radius:0}
+  .lightbox-stage{grid-template-columns:34px minmax(0,1fr) 34px;gap:6px}
+  .lightbox-close,.lightbox-nav{width:34px;height:38px}
   .container{padding:0 20px}
   .nav{height:64px}
   .brandmark{width:52px;height:32px}

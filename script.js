@@ -119,6 +119,42 @@ document.querySelectorAll('[data-map-carousel]').forEach(carousel=>{
   updateCarousel();
 });
 
+// ===== WORK IMAGE LIGHTBOX =====
+const workLightbox=document.getElementById('workLightbox');
+const workImageButtons=Array.from(document.querySelectorAll('[data-lightbox-image]'));
+const workLightboxImage=document.getElementById('lightboxImage');
+const workLightboxCaption=document.getElementById('lightboxCaption');
+const workLightboxCounter=document.getElementById('lightboxCounter');
+let workLightboxIndex=0;
+let workLightboxTrigger=null;
+const showWorkImage=index=>{
+  workLightboxIndex=(index+workImageButtons.length)%workImageButtons.length;
+  const image=workImageButtons[workLightboxIndex].querySelector('img');
+  workLightboxImage.src=image.currentSrc||image.src;
+  workLightboxImage.alt=image.alt;
+  workLightboxCaption.textContent=image.alt;
+  workLightboxCounter.textContent=`${workLightboxIndex+1} / ${workImageButtons.length}`;
+};
+workImageButtons.forEach((button,index)=>button.addEventListener('click',()=>{
+  workLightboxTrigger=button;
+  showWorkImage(index);
+  workLightbox.showModal();
+  document.getElementById('lightboxClose').focus();
+}));
+document.getElementById('lightboxClose').addEventListener('click',()=>workLightbox.close());
+workLightbox.querySelectorAll('[data-lightbox-step]').forEach(button=>button.addEventListener('click',()=>{
+  showWorkImage(workLightboxIndex+Number(button.dataset.lightboxStep));
+}));
+workLightbox.addEventListener('click',event=>{
+  if(event.target===workLightbox)workLightbox.close();
+});
+workLightbox.addEventListener('keydown',event=>{
+  if(event.key==='Escape'){event.preventDefault();workLightbox.close();}
+  if(event.key==='ArrowLeft'){event.preventDefault();showWorkImage(workLightboxIndex-1);}
+  if(event.key==='ArrowRight'){event.preventDefault();showWorkImage(workLightboxIndex+1);}
+});
+workLightbox.addEventListener('close',()=>workLightboxTrigger?.focus());
+
 // ===== SCROLL INTERACTIONS =====
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion&&'IntersectionObserver' in window){

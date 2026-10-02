@@ -268,8 +268,12 @@
       <div class="catalog-track" role="region" aria-label="Contoh karya Triblox Builds" aria-roledescription="carousel" tabindex="0">
         <article class="map-card catalog-slide" role="group" aria-roledescription="slide" aria-label="Contoh 1 dari 2">
           <div class="map-gallery">
-            <img src="assests/Screenshot_20261002_012926.png" alt="Pemandangan jalan kota HorrorTown pada malam hari" loading="lazy">
-            <img src="assests/Screenshot_20261002_013344.png" alt="Pemain di area awal HorrorTown dengan papan misi" loading="lazy">
+            <button class="map-image-trigger" type="button" data-lightbox-image aria-label="Perbesar screenshot HorrorTown: Pemandangan jalan kota pada malam hari">
+              <img src="assests/Screenshot_20261002_012926.png" alt="Pemandangan jalan kota HorrorTown pada malam hari" loading="lazy">
+            </button>
+            <button class="map-image-trigger" type="button" data-lightbox-image aria-label="Perbesar screenshot HorrorTown: Pemain di area awal dengan papan misi">
+              <img src="assests/Screenshot_20261002_013344.png" alt="Pemain di area awal HorrorTown dengan papan misi" loading="lazy">
+            </button>
           </div>
           <div class="map-body">
             <span class="concept-kicker">Contoh karya · Horror</span>
@@ -279,8 +283,12 @@
         </article>
         <article class="map-card catalog-slide" role="group" aria-roledescription="slide" aria-label="Contoh 2 dari 2">
           <div class="map-gallery">
-            <img src="assests/Screenshot_20261002_070902.png" alt="Mode Top Speedrun dari The Lost Dimension dengan lintasan parkour di atas laut" loading="lazy">
-            <img src="assests/Screenshot_20261002_070950.png" alt="Area The Lost Dimension dengan Energy Core dan shard" loading="lazy">
+            <button class="map-image-trigger" type="button" data-lightbox-image aria-label="Perbesar screenshot The Lost Dimension: Mode Top Speedrun">
+              <img src="assests/Screenshot_20261002_070902.png" alt="Mode Top Speedrun dari The Lost Dimension dengan lintasan parkour di atas laut" loading="lazy">
+            </button>
+            <button class="map-image-trigger" type="button" data-lightbox-image aria-label="Perbesar screenshot The Lost Dimension: Area Energy Core dan shard">
+              <img src="assests/Screenshot_20261002_070950.png" alt="Area The Lost Dimension dengan Energy Core dan shard" loading="lazy">
+            </button>
           </div>
           <div class="map-body">
             <span class="concept-kicker">Contoh karya · Obby / Parkour</span>
@@ -308,6 +316,25 @@
     </div>
   </div>
 </section>
+
+<dialog class="work-lightbox" id="workLightbox" aria-label="Pratinjau screenshot karya">
+  <div class="lightbox-toolbar">
+    <span id="lightboxCounter" aria-live="polite">1 / 4</span>
+    <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Tutup tampilan gambar">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m18 6-12 12M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="lightbox-stage">
+    <button class="lightbox-nav" type="button" data-lightbox-step="-1" aria-label="Screenshot sebelumnya">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <img id="lightboxImage" alt="">
+    <button class="lightbox-nav" type="button" data-lightbox-step="1" aria-label="Screenshot berikutnya">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </div>
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</dialog>
 
 <!-- ===== CARA ORDER ===== -->
 <section id="cara-order">
