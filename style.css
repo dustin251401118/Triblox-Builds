@@ -175,6 +175,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in s
 .map-body{padding:20px}
 .map-body h3{font-size:1.02rem;margin-bottom:4px}
 .map-body p{color:var(--text-2);font-size:.86rem;margin-bottom:14px}
+.map-body .game-features{margin:0;padding-left:18px;color:var(--text-2);font-size:.84rem}
+.map-body .game-features li+li{margin-top:6px}
 .map-foot{display:flex;justify-content:space-between;align-items:center}
 .price{font-family:'Space Grotesk';font-weight:700}
 .price small{color:var(--text-2);font-weight:400;font-family:'Inter';font-size:.75rem}
