@@ -83,6 +83,42 @@ document.getElementById('useConcept').addEventListener('click',()=>{
   }
 });
 
+// ===== CATALOG IMAGE CAROUSEL =====
+document.querySelectorAll('[data-map-carousel]').forEach(carousel=>{
+  const gallery=carousel.querySelector('.catalog-track');
+  const slides=Array.from(gallery.querySelectorAll('.catalog-slide'));
+  const indicators=Array.from(carousel.querySelectorAll('[data-carousel-goto]'));
+  const arrows=Array.from(carousel.querySelectorAll('[data-carousel-step]'));
+  let activeIndex=0;
+  const updateCarousel=()=>{
+    const trackLeft=gallery.getBoundingClientRect().left;
+    activeIndex=slides.reduce((closestIndex,slide,index)=>{
+      const distance=Math.abs(slide.getBoundingClientRect().left-trackLeft);
+      const closestDistance=Math.abs(slides[closestIndex].getBoundingClientRect().left-trackLeft);
+      return distance<closestDistance?index:closestIndex;
+    },0);
+    indicators.forEach((indicator,index)=>indicator.setAttribute('aria-current',String(index===activeIndex)));
+    arrows.forEach(arrow=>{
+      const step=Number(arrow.dataset.carouselStep);
+      arrow.disabled=step<0?activeIndex===0:activeIndex===slides.length-1;
+    });
+  };
+  const goToSlide=index=>{
+    const trackLeft=gallery.getBoundingClientRect().left;
+    const slideLeft=slides[index].getBoundingClientRect().left;
+    gallery.scrollTo({left:gallery.scrollLeft+slideLeft-trackLeft,behavior:prefersReducedMotion?'auto':'smooth'});
+  };
+  arrows.forEach(arrow=>arrow.addEventListener('click',()=>goToSlide(activeIndex+Number(arrow.dataset.carouselStep))));
+  indicators.forEach(indicator=>indicator.addEventListener('click',()=>goToSlide(Number(indicator.dataset.carouselGoto))));
+  gallery.addEventListener('scroll',()=>window.requestAnimationFrame(updateCarousel),{passive:true});
+  gallery.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'&&activeIndex>0){event.preventDefault();goToSlide(activeIndex-1);}
+    if(event.key==='ArrowRight'&&activeIndex<slides.length-1){event.preventDefault();goToSlide(activeIndex+1);}
+  });
+  window.addEventListener('resize',updateCarousel);
+  updateCarousel();
+});
+
 // ===== SCROLL INTERACTIONS =====
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion&&'IntersectionObserver' in window){

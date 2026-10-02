@@ -130,7 +130,23 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in s
 .card ul li{margin-bottom:6px}
 
 /* ===== CATALOG ===== */
-.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.catalog-carousel{margin-top:48px}
+.catalog-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x}
+.catalog-track::-webkit-scrollbar{display:none}
+.catalog-track:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.catalog-slide{flex:0 0 min(78%,760px);scroll-snap-align:start}
+.catalog-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:28px;padding-top:22px;border-top:1px solid var(--border)}
+.catalog-cta p{color:var(--text-2);font-size:.92rem}
+.map-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;background:var(--border);overflow:hidden}
+.map-gallery-single{grid-template-columns:1fr}
+.map-gallery img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.map-carousel-controls{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:4px 12px;background:var(--surface)}
+.map-carousel-arrow{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);cursor:pointer}
+.map-carousel-arrow:disabled{opacity:.38;cursor:default}
+.map-carousel-arrow:focus-visible,.map-carousel-indicators button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.map-carousel-indicators{display:flex;align-items:center;gap:8px}
+.map-carousel-indicators button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:var(--border);cursor:pointer}
+.map-carousel-indicators button[aria-current="true"]{width:20px;border-radius:4px;background:var(--accent)}
 .catalog-empty{margin-top:40px;padding:48px 24px;text-align:center;background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius)}
 .catalog-empty-icon{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 14px;border-radius:16px;background:var(--accent-soft);color:var(--accent)}
 .catalog-empty-icon .icon{width:28px;height:28px}
@@ -218,7 +234,9 @@ footer{border-top:1px solid var(--border);padding:44px 0;margin-top:88px}
   #hamburger{display:block}
 }
 @media(max-width:640px){
-  .cards-3,.catalog-grid,.pay-grid,.steps{grid-template-columns:1fr}
+  .cards-3,.pay-grid,.steps{grid-template-columns:1fr}
+  .catalog-cta{align-items:flex-start;flex-direction:column}
+  .catalog-slide{flex-basis:88%}
   .container{padding:0 20px}
   .nav{height:64px}
   .brandmark{width:52px;height:32px}
